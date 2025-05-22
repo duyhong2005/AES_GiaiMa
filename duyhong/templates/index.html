@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Cryptographer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="glowing-title">AES Cryptographer</h1>
+        <p class="subtitle">Mã hóa và giải mã file với thuật toán AES-256</p>
+        
+        <form method="POST" enctype="multipart/form-data" class="crypto-form">
+            <div class="form-group">
+                <label for="file" class="file-label">
+                    <span id="file-name">Chọn file...</span>
+                    <input type="file" name="file" id="file" required>
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" name="key" id="key" placeholder="Nhập mã khóa bí mật..." required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" name="action" value="encrypt" class="btn encrypt-btn">Mã Hóa</button>
+                <button type="submit" name="action" value="decrypt" class="btn decrypt-btn">Giải Mã</button>
+            </div>
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    
+    <div class="candles">
+        <div class="candle"></div>
+        <div class="candle"></div>
+        <div class="candle"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

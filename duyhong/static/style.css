@@ -1,0 +1,212 @@
+/* Base styles */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #00ffff;
+}
+
+.glowing-title {
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Form styles */
+.crypto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-label {
+    display: block;
+    padding: 1rem;
+    background-color: rgba(0, 40, 40, 0.5);
+    border: 1px dashed #00ffff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-label:hover {
+    background-color: rgba(0, 60, 60, 0.7);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.file-label input {
+    display: none;
+}
+
+#file-name {
+    display: block;
+    color: #00ffff;
+}
+
+input[type="password"] {
+    padding: 1rem;
+    background-color: rgba(0, 20, 20, 0.7);
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    color: #00ffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="password"]:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.encrypt-btn {
+    background-color: rgba(0, 80, 0, 0.7);
+    color: #00ff00;
+}
+
+.encrypt-btn:hover {
+    background-color: rgba(0, 100, 0, 0.9);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.decrypt-btn {
+    background-color: rgba(80, 0, 0, 0.7);
+    color: #ff0000;
+}
+
+.decrypt-btn:hover {
+    background-color: rgba(100, 0, 0, 0.9);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Flash messages */
+.flash-messages {
+    margin-top: 1rem;
+}
+
+.flash-message {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    color: #ff9999;
+    text-align: center;
+}
+
+/* Candle animation */
+.candles {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 0;
+}
+
+.candle {
+    position: relative;
+    width: 30px;
+    height: 80px;
+    background: linear-gradient(to right, #8B4513, #A0522D, #8B4513);
+    border-radius: 5px;
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFA500, #FF4500, #FF0000);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 20px #FF4500, 0 0 40px #FF4500;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(-50%) scale(0.9);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-50%) scale(0.95);
+        opacity: 0.9;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .glowing-title {
+        font-size: 2rem;
+    }
+}
