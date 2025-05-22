@@ -3,6 +3,9 @@
 ## 🌟 Giới thiệu
 Chương trình mã hóa/giải mã file sử dụng thuật toán **AES-256** (Advanced Encryption Standard) - chuẩn mã hóa mạnh mẽ nhất hiện nay. Ứng dụng web với giao diện ma mị, hỗ trợ bảo mật dữ liệu quan trọng của bạn.
 
+## 🖼️ Màn hình minh họa
+![image](https://github.com/user-attachments/assets/ac97a36a-1e03-4dd0-92a9-16b4abc39e8b)
+
 ## 🔮 Tính năng chính
 
 ### 🔒 Mã hóa/Giải mã file
@@ -40,11 +43,3 @@ Chương trình mã hóa/giải mã file sử dụng thuật toán **AES-256** (
 3. Chọn chức năng **"Mã Hóa"** hoặc **"Giải Mã"**
 4. Hệ thống tự động **tải file kết quả** về máy
 5. **Lưu giữ cẩn thận** khóa bí mật để giải mã sau này
-
-## 🖼️ Màn hình minh họa
-![image](https://github.com/user-attachments/assets/ac97a36a-1e03-4dd0-92a9-16b4abc39e8b)
-
-## 📥 Cài đặt & Chạy
-```bash
-pip install flask pycryptodome
-python app.py
