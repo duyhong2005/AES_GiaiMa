@@ -1,4 +1,4 @@
-  ############################################################################ 🧙‍♂️ AES Cryptographer - Giới thiệu chức năng
+# 🧙‍♂️ AES Cryptographer - Giới thiệu chức năng
 
 ## 🌟 Giới thiệu
 Chương trình mã hóa/giải mã file sử dụng thuật toán **AES-256** (Advanced Encryption Standard) - chuẩn mã hóa mạnh mẽ nhất hiện nay. Ứng dụng web với giao diện ma mị, hỗ trợ bảo mật dữ liệu quan trọng của bạn.
